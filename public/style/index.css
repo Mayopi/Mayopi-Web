@@ -1,0 +1,29 @@
+:root {
+  --primary: #7289da;
+  --dark: #2c2f33;
+  --Discord-light-gray: #23272a;
+  --secondary: #2c2f33;
+  --ternary: #7b68ee;
+  --additional: #b06ad7;
+  --success: #43b581;
+  --warning: #faa61a;
+  --danger: #f04747;
+  --light: #f6f6f6;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--secondary);
+  font-family: "Open Sans" sans-serif;
+  color: var(--light);
+}
+
+nav {
+  background: inherit !important;
+}
+
+.navbar-brand a {
+  font-weight: bold;
+}
