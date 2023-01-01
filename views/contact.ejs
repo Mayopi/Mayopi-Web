@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Mayopi</title>
+
+    <%- include('./layouts/assets.ejs') %>
+
+    <link rel="stylesheet" href="style/contact.css" />
+  </head>
+  <body>
+    <%- include('./layouts/navbar.ejs') %>
+
+    <section class="contact container">
+      <h2 class="text-center">Get in touch with Us</h2>
+      <p class="text-center sub-title opacity-50">Any question or remarks? Just left Us message!</p>
+
+      <div class="row mt-5">
+        <div class="col-sm-4">
+          <div class="card">
+            <ul>
+              <div class="card-body">
+                <h3 class="card-title">Contact Information</h3>
+                <h6 class="card-subtitle mb-2">Fill up the form and our team will get back to you within 24 hours</h6>
+
+                <li>
+                  <i class="fa-solid fa-envelope"></i>
+                  help.mayopi@gmail.com
+                </li>
+                <li>
+                  <i class="fa-solid fa-phone"></i>
+                  08**-****-****
+                </li>
+
+                <li>
+                  <a href="https://discord.gg/uRHYyXnxMt" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>
+                </li>
+                <li>
+                  <a href="#" target="_blank">
+                    <i class="fa-brands fa-twitter"></i>
+                    Twitter
+                  </a>
+                </li>
+                <li>
+                  <a href="https://github.com/Mayopi" target="_blank">
+                    <i class="fa-brands fa-github"></i>
+                    Github
+                  </a>
+                </li>
+              </div>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-8">
+          <form class="contact-form">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" name="email" />
+                  <div class="form-text subtitle">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="form-floating">
+                  <select class="form-select" id="issue" aria-label="Floating label select example">
+                    <option value="Bugs">Bugs</option>
+                    <option value="Performance Issues">Performance Issues</option>
+                    <option value="Security Issues">Security Issues</option>
+                    <option value="Lack of Features">Lack of Features</option>
+                  </select>
+                  <label for="issue" class="weird-label">Issue Type</label>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-floating" style="height: 100%">
+                  <textarea class="form-control" name="message" placeholder="Leave your message" id="message" style="height: 100%; color: #333" placeholder="Leave us your message"></textarea>
+                  <label for="message" class="weird-label">Message</label>
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="btn mt-5">Submit</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="container p-3">
+      <div class="row">
+        <div class="col-sm-4">
+          <ul>
+            <li>
+              <a href="#">
+                <img src="img/profile.png" alt="profile-bot" class="rounded-circle" width="40" />
+              </a>
+            </li>
+            <li>
+              <p>
+                Copyright &copy; 2023 Mayopi Corp. <br />
+                All rights reserved
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-2 developer">
+          <ul>
+            <li>
+              <h3>Developer</h3>
+            </li>
+            <li>Mayo</li>
+          </ul>
+        </div>
+        <div class="col-sm-2 feature">
+          <ul>
+            <li>
+              <h3>Features</h3>
+            </li>
+            <li>
+              <i class="fa-solid fa-check"></i>
+              Moderation
+            </li>
+            <li>
+              <i class="fa-solid fa-check"></i>
+              Music
+            </li>
+            <li>
+              <i class="fa-solid fa-check"></i>
+              Utilities
+            </li>
+            <li>
+              <i class="fa-solid fa-check"></i>
+              AI <span class="badge rounded-pill text-bg-light">BETA</span>
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-2 contact">
+          <ul>
+            <li>
+              <h3>Contact</h3>
+            </li>
+            <li>
+              <a href="https://discord.gg/uRHYyXnxMt" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>
+            </li>
+            <li>
+              <a href="#" target="_blank">
+                <i class="fa-brands fa-twitter"></i>
+                Twitter
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/Mayopi" target="_blank">
+                <i class="fa-brands fa-github"></i>
+                Github
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div id="contact-notification" class="toast text-bg-success" data-delay="5000" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <img src="img/profile.png" class="rounded me-2" width="50" />
+          <strong class="me-auto">Mayopi</strong>
+          <small class="time"></small>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">test</div>
+      </div>
+    </div>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div id="contact-error" class="toast text-bg-danger" data-delay="5000" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <img src="img/profile.png" class="rounded me-2" width="50" />
+          <strong class="me-auto">Mayopi</strong>
+          <small class="time"></small>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body"></div>
+      </div>
+    </div>
+
+    <script>
+      const form = document.querySelector(".contact-form");
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const email = form.email.value;
+        const select = document.getElementById("issue");
+        const selectedOption = select.options[select.selectedIndex];
+        const option = selectedOption.value;
+        const message = form.message.value;
+
+        const res = await fetch("/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, option, message }),
+        });
+
+        const data = await res.json();
+
+        console.log(data);
+
+        if (data.errors) {
+          const notification = document.getElementById("contact-error");
+          const toast = new bootstrap.Toast(notification);
+
+          const body = notification.querySelector(".toast-body");
+          body.innerHTML = data.errors;
+
+          const small = notification.querySelector(".time");
+          small.innerHTML = data.time.toFixed(2) + " Second ago";
+          toast.show();
+        }
+
+        if (data.message) {
+          const notification = document.getElementById("contact-notification");
+          const toast = new bootstrap.Toast(notification);
+
+          const body = notification.querySelector(".toast-body");
+          body.innerHTML = data.message;
+
+          const small = notification.querySelector(".time");
+          small.innerHTML = data.time.toFixed(2) + " Second ago";
+
+          toast.show();
+        }
+      });
+    </script>
+  </body>
+</html>

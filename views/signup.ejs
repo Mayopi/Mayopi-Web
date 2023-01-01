@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up | Mayopi</title>
+
+    <%- include('./layouts/assets.ejs') %>
+
+    <link rel="stylesheet" href="style/sign.css" />
+  </head>
+  <body>
+    <%- include('./layouts/navbar.ejs') %>
+
+    <section class="main container">
+      <h1 class="text-center"><img src="img/profile.png" alt="profile-bot" class="rounded-circle" width="50" /> Sign <span>Up</span></h1>
+      <form action="" class="d-flex flex-column gap-3 signup-form">
+        <div
+          id="g_id_onload"
+          data-client_id="786202553455-40vnfgupq8be0heidbptc55adtjk6bv6.apps.googleusercontent.com"
+          data-context="signup"
+          data-ux_mode="redirect"
+          data-login_uri="http://localhost:3000/signup"
+          data-itp_support="true"
+        ></div>
+
+        <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="outline" data-text="signup_with" data-size="large" data-logo_alignment="left"></div>
+
+        <hr />
+
+        <!-- <label for="email">Email Address</label> -->
+        <input type="email" name="email" id="email" placeholder="Enter your Email" />
+        <!-- <label for="password">Password</label> -->
+        <input type="password" name="password" id="password" placeholder="Enter your Password" />
+        <!-- <label for="confirmPassword">Confirm Password</label> -->
+        <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm your Password" />
+
+        <button type="submit" class="btn signup-btn mt-3">Sign Up</button>
+
+        <p class="already-have-account opacity-80">Already have an account? <a href="/login">Log in</a></p>
+      </form>
+    </section>
+
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+    <script>
+      const form = document.querySelector(".signup-form");
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const email = form.email.value;
+        const password = form.password.value;
+        const confirmPassword = form.confirmPassword.value;
+
+        if (password !== confirmPassword) {
+          const notification = document.getElementById("signup-error");
+          const toast = new bootstrap.Toast(notification);
+
+          const body = notification.querySelector(".toast-body");
+          body.innerHTML = "Incorrect Confirm Password";
+
+          toast.show();
+          return;
+        }
+
+        const res = await fetch("/signup", {
+          headers: { "Content-Type": "application/json" },
+          method: "POST",
+          body: JSON.stringify({ email, password, confirmPassword }),
+        });
+
+        const data = await res.json();
+
+        console.log(data);
+
+        if (data.errors) {
+          const notification = document.getElementById("signup-error");
+          const toast = new bootstrap.Toast(notification);
+
+          const body = notification.querySelector(".toast-body");
+          body.innerHTML = data.errors;
+
+          const small = notification.querySelector(".time");
+          small.innerHTML = data.time.toFixed(2) + " Second ago";
+          toast.show();
+        }
+
+        if (data.user) {
+          const notification = document.getElementById("signup");
+          const toast = new bootstrap.Toast(notification);
+
+          const body = notification.querySelector(".toast-body");
+          body.innerHTML = `${data.user[0].email} successfully created!`;
+
+          const small = notification.querySelector(".time");
+          small.innerHTML = data.time.toFixed(2) + " Second ago";
+          toast.show();
+        }
+      });
+    </script>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div id="signup-error" class="toast text-bg-danger" data-delay="5000" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <img src="img/profile.png" class="rounded me-2" width="50" />
+          <strong class="me-auto">Mayopi</strong>
+          <small class="time"></small>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body"></div>
+      </div>
+    </div>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div id="signup" class="toast text-bg-success" data-delay="5000" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <img src="img/profile.png" class="rounded me-2" width="50" />
+          <strong class="me-auto">Mayopi</strong>
+          <small class="time"></small>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body"></div>
+      </div>
+    </div>
+  </body>
+</html>

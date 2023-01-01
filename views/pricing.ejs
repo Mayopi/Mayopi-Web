@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pricing | Mayopi</title>
+
+    <%- include('./layouts/assets.ejs') %>
+
+    <link rel="stylesheet" href="/style/pricing.css" />
+  </head>
+  <body>
+    <%- include('./layouts/navbar.ejs')%>
+
+    <section class="pricing container-fluid p-5">
+      <h1 class="text-center"><span>Ready</span> to Get Started?</h1>
+      <p class="text-center sub-title">Choose your suitable plan for your needs</p>
+
+      <div class="content d-flex flex-wrap gap-3 justify-content-center">
+        <div class="card startup-plan">
+          <div class="card-body">
+            <h3 class="card-title">Startup</h3>
+            <h6 class="card-subtitle mb-2 text-muted">Perfect to get started</h6>
+            <h1 class="text-center">0&dollar;/Month</h1>
+            <button class="price-btn">Get Started</button>
+            <ul class="list-group mt-2">
+              <li class="list-group-item">
+                <h6 class="card-subtitle text-muted">Startup plan include</h6>
+              </li>
+              <li class="list-group-item">
+                <i class="fa-solid fa-check"></i>
+                Music
+              </li>
+              <li class="list-group-item">
+                <i class="fa-solid fa-check"></i>
+                Utilities
+              </li>
+              <li class="list-group-item">
+                <i class="fa-solid fa-check"></i>
+                Email Support
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="card developer-plan">
+          <div class="card-body">
+            <h3 class="card-title">Developer</h3>
+            <h6 class="card-subtitle mb-2 text-muted">Best for indie Devs</h6>
+            <h1 class="text-center">9&dollar;/Month</h1>
+            <button class="price-btn">Get Started</button>
+            <ul class="list-group mt-2">
+              <li class="list-group-item">
+                <h6 class="card-subtitle text-muted">Developer plan include</h6>
+              </li>
+              <li class="list-group-item">
+                <i class="fa-solid fa-check"></i>
+                Music
+              </li>
+              <li class="list-group-item">
+                <i class="fa-solid fa-check"></i>
+                Utilities
+              </li>
+              <li class="list-group-item">
+                <i class="fa-solid fa-check"></i>
+                Moderation
+              </li>
+              <li class="list-group-item">
+                <i class="fa-solid fa-check"></i>
+                Discord Contact Support
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="card company-plan">
+          <div class="card-body">
+            <h3 class="card-title">Company</h3>
+            <h6 class="card-subtitle mb-2 text-muted">Toolset for growth Company</h6>
+            <h1 class="text-center">35&dollar;/Month</h1>
+            <button class="price-btn">Get Started</button>
+            <ul class="list-group mt-2">
+              <li class="list-group-item">
+                <h6 class="card-subtitle text-muted">Company plan include</h6>
+              </li>
+              <li class="list-group-item">
+                <i class="fa-solid fa-check"></i>
+                Music
+              </li>
+              <li class="list-group-item">
+                <i class="fa-solid fa-check"></i>
+                Utilities
+              </li>
+              <li class="list-group-item">
+                <i class="fa-solid fa-check"></i>
+                Moderation
+              </li>
+              <li class="list-group-item">
+                <i class="fa-solid fa-check"></i>
+                Artificial Intelligence <span class="badge rounded-pill text-bg-danger">BETA</span>
+              </li>
+              <li class="list-group-item">
+                <i class="fa-solid fa-check"></i>
+                24/7 Customer Services
+              </li>
+              <li class="list-group-item">
+                <i class="fa-solid fa-check"></i>
+                Whatsapp Contact Support
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="container p-3">
+      <div class="row">
+        <div class="col-sm-4">
+          <ul>
+            <li>
+              <a href="#">
+                <img src="img/profile.png" alt="profile-bot" class="rounded-circle" width="40" />
+              </a>
+            </li>
+            <li>
+              <p>
+                Copyright &copy; 2023 Mayopi Corp. <br />
+                All rights reserved
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-2 developer">
+          <ul>
+            <li>
+              <h3>Developer</h3>
+            </li>
+            <li>Mayo</li>
+          </ul>
+        </div>
+        <div class="col-sm-2 feature">
+          <ul>
+            <li>
+              <h3>Features</h3>
+            </li>
+            <li>
+              <i class="fa-solid fa-check"></i>
+              Moderation
+            </li>
+            <li>
+              <i class="fa-solid fa-check"></i>
+              Music
+            </li>
+            <li>
+              <i class="fa-solid fa-check"></i>
+              Utilities
+            </li>
+            <li>
+              <i class="fa-solid fa-check"></i>
+              AI <span class="badge rounded-pill text-bg-light">BETA</span>
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-2 contact">
+          <ul>
+            <li>
+              <h3>Contact</h3>
+            </li>
+            <li>
+              <a href="https://discord.gg/uRHYyXnxMt" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>
+            </li>
+            <li>
+              <a href="#" target="_blank">
+                <i class="fa-brands fa-twitter"></i>
+                Twitter
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/Mayopi" target="_blank">
+                <i class="fa-brands fa-github"></i>
+                Github
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

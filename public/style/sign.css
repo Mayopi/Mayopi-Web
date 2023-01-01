@@ -1,0 +1,78 @@
+:root {
+  --primary: #7289da;
+  --dark: #282a2d;
+  --Discord-light-gray: #23272a;
+  --secondary: #2c2f33;
+  --ternary: #7b68ee;
+  --additional: #b06ad7;
+  --success: #43b581;
+  --warning: #faa61a;
+  --danger: #f04747;
+  --light: #f6f6f6;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--secondary);
+  font-family: "Open Sans" sans-serif;
+  color: var(--light);
+  /* height: 1000px; */
+}
+
+.btn {
+  background: var(--primary);
+  color: var(--light);
+  font-weight: bold;
+}
+
+.btn:hover {
+  background: var(--ternary);
+  color: var(--light);
+}
+
+nav {
+  background: inherit !important;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: var(--primary);
+  font-size: 2em;
+  transition: 0.3s;
+}
+
+section {
+  margin-top: 200px;
+}
+
+section.main span {
+  color: var(--primary);
+}
+
+section.main {
+  max-width: 700px;
+  background-color: var(--dark);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.4);
+}
+
+section.main input {
+  border: none;
+  border-radius: 5px;
+  min-height: 40px;
+  font-size: 16px;
+  padding: 5px;
+}
+
+hr {
+  border: 2px solid var(--light);
+  background-color: var(--light);
+}
+
+.already-have-account a {
+  text-decoration: none;
+  color: var(--primary);
+}

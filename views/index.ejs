@@ -6,45 +6,159 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mayopi | Your Favorite Discord Bot</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" />
+    <%- include('./layouts/assets.ejs')%>
 
     <link rel="stylesheet" href="style/index.css" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Mayopi</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav mx-auto">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+    <%- include('./layouts/navbar.ejs') %>
+
+    <section class="main container-fluid">
+      <div class="overlay"></div>
+      <div class="row">
+        <div class="col-sm-6">
+          <h1>Transcending Your Boundaries with <span> Mayopi</span></h1>
+          <a href="https://discord.com/api/oauth2/authorize?client_id=984027246601842688&permissions=8&scope=bot%20applications.commands"
+            ><button class="btn"><i class="fa-brands fa-discord"></i> Invite Me &rightarrow;</button></a
+          >
+        </div>
+        <div class="col-sm-6 d-flex justify-content-center">
+          <img src="/img/profile.png" alt="Mayopi-Profile" class="profile-bot" width="50%" />
+        </div>
+      </div>
+    </section>
+
+    <section class="features container-fluid p-5" id="features">
+      <h1 class="text-center">Features</h1>
+      <div class="content d-flex gap-3 flex-wrap justify-content-center align-items-center">
+        <div class="card" id="moderation">
+          <img
+            src="https://img.freepik.com/free-vector/global-data-security-personal-data-security-cyber-data-security-online-concept-illustration-internet-security-information-privacy-protection_1150-37373.jpg?w=900&t=st=1672288783~exp=1672289383~hmac=6589b0784e9403b806492af2c6fb87ade6fb120fa7d49814666ffbb2b0582ddc"
+            class="card-img-top"
+            alt="Moderation Image"
+          />
+          <div class="card-body">
+            <h3 class="card-title">Moderation</h3>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href=""><button class="btn btn-light detail-btn">Detail &raquo;</button></a>
+          </div>
+        </div>
+        <div class="card" id="music">
+          <img
+            src="https://img.freepik.com/free-vector/colorful-sound-wave-equalizer_53876-63961.jpg?w=740&t=st=1672288280~exp=1672288880~hmac=196e8d7ddd2bf5d5b4306c83dd80a673510ec2325ee2feba4885732136c5c48c"
+            class="card-img-top"
+            alt="Moderation Image"
+          />
+          <div class="card-body">
+            <h3 class="card-title">Music</h3>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href=""><button class="btn btn-light detail-btn">Detail &raquo;</button></a>
+          </div>
+        </div>
+        <div class="card" id="utilities">
+          <img
+            src="https://img.freepik.com/free-vector/cogged-wheels-gear-mechanism-schema-poster_98292-1372.jpg?w=740&t=st=1672288985~exp=1672289585~hmac=cfda1f8e56f68d77cdab0f1d5d1d45147352502e8f029df4314134f55a13e204"
+            class="card-img-top"
+            alt="Moderation Image"
+          />
+          <div class="card-body">
+            <h3 class="card-title">Utilities</h3>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href=""><button class="btn btn-light detail-btn">Detail &raquo;</button></a>
+          </div>
+        </div>
+        <div class="card" id="utilities">
+          <img
+            src="https://img.freepik.com/free-photo/ai-chip-artificial-intelligence-future-technology-innovation_53876-129780.jpg?w=740&t=st=1672297124~exp=1672297724~hmac=23d12da75b3436ab5681721f82dc76f633e9af461847eb766974196f7ef6774a"
+            class="card-img-top"
+            alt="Moderation Image"
+          />
+          <div class="card-body">
+            <h3 class="card-title">Artificial Intelligence <span class="badge rounded-pill text-bg-danger">BETA</span></h3>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href=""><button class="btn btn-light detail-btn">Detail &raquo;</button></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="container p-3">
+      <div class="row">
+        <div class="col-sm-4">
+          <ul>
+            <li>
+              <a href="#">
+                <img src="img/profile.png" alt="profile-bot" class="rounded-circle" width="40" />
+              </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
+            <li>
+              <p>
+                Copyright &copy; 2023 Mayopi Corp. <br />
+                All rights reserved
+              </p>
             </li>
           </ul>
-          <ul class="navbar-nav">
-            <li class="nav-link">
-              <a href="#" class="nav-link">FAQ</a>
+        </div>
+        <div class="col-sm-2 developer">
+          <ul>
+            <li>
+              <h3>Developer</h3>
             </li>
-            <li class="nav-link">
-              <button class="btn btn-primary">Get Started &rightarrow;</button>
+            <li>Mayo</li>
+          </ul>
+        </div>
+        <div class="col-sm-2 feature">
+          <ul>
+            <li>
+              <h3>Features</h3>
+            </li>
+            <li>
+              <i class="fa-solid fa-check"></i>
+              Moderation
+            </li>
+            <li>
+              <i class="fa-solid fa-check"></i>
+              Music
+            </li>
+            <li>
+              <i class="fa-solid fa-check"></i>
+              Utilities
+            </li>
+            <li>
+              <i class="fa-solid fa-check"></i>
+              AI <span class="badge rounded-pill text-bg-light">BETA</span>
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-2 contact">
+          <ul>
+            <li>
+              <h3>Contact</h3>
+            </li>
+            <li>
+              <a href="https://discord.gg/uRHYyXnxMt" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>
+            </li>
+            <li>
+              <a href="#" target="_blank">
+                <i class="fa-brands fa-twitter"></i>
+                Twitter
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/Mayopi" target="_blank">
+                <i class="fa-brands fa-github"></i>
+                Github
+              </a>
             </li>
           </ul>
         </div>
       </div>
-    </nav>
+    </footer>
 
-    <section class="main container-fluid">
-      <h1>Trascending Your Boundaries with Mayopi</h1>
-    </section>
+    <div id="g_id_onload" data-client_id="786202553455-40vnfgupq8be0heidbptc55adtjk6bv6.apps.googleusercontent.com" data-auto_select="true" data-login_uri="http://localhost:3000/login"></div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+    <script src="script/index.js"></script>
   </body>
 </html>
